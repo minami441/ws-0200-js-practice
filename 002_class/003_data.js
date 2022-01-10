@@ -27,6 +27,7 @@ class List {
    */
   get size() {
     // TODO:
+    return this.data.length;
   }
 
   /** 引数で渡された添字のデータを取得する
@@ -36,6 +37,7 @@ class List {
    */
   index(index) {
     // TODO:
+    return this.data[index];
   }
 
   /** リストの 要素を追加する
@@ -45,6 +47,7 @@ class List {
    */
   push(item) {
     // TODO:
+     this.data.push(item);
   }
 
   /** 与えられた引数により、リストの 要素を削除する
@@ -53,7 +56,7 @@ class List {
    * @return {Number}
    */
   remove(targetIndex) {
-    // TODO:
+    // TODO:途中
   }
 
   /** リストの 末尾の要素を取得する
@@ -63,6 +66,7 @@ class List {
    */
   pop() {
     // TODO:
+    return this.data.pop();
   }
 
   /** リストの 先頭の要素を取得する
@@ -71,6 +75,7 @@ class List {
    */
   shift() {
     // TODO:
+    return this.data.shift();
   }
 
   /** リストの の中から引数に合致する値を取得する
@@ -82,6 +87,13 @@ class List {
    */
   find(target) {
     // TODO:
+    let tmp;
+    for(let i=0; i<this.data.length; i++){
+           if(this.data[i]==target){
+              tmp=this.data[i];
+           }
+    }
+    return tmp;
   }
 
   /** リストの の中から引数に合致する値のindexを取得する。見つからない場合は-1を返す
@@ -93,6 +105,16 @@ class List {
    */
   findIndex(target) {
     // TODO:
+    let tmp;
+    for(let i=0; i<this.data.length; i++){
+           if(this.data[i]==target){
+              tmp=i;
+           }
+    }
+    if (!tmp){
+      tmp=-1;
+    }
+    return tmp;
   }
 
   /** リストの の中から要素に合致する数を取り除く
@@ -106,6 +128,7 @@ class List {
    */
   filter(target) {
     // TODO:
+
   }
 }
 
@@ -136,6 +159,7 @@ class Stack {
    */
   push(item) {
     // TODO:
+    this.data.push(item);
   }
 
   /** スタックから要素を取得する
@@ -145,6 +169,7 @@ class Stack {
    */
   pop() {
     // TODO:
+    return this.data.pop();
   }
 
   /** スタックの末尾の要素を参照する
@@ -154,6 +179,7 @@ class Stack {
    */
   peek() {
     // TODO:
+   return this.data[this.data.length-1];
   }
 }
 
@@ -185,6 +211,7 @@ class Queue {
    */
   enqueue(item) {
     // TODO:
+   return this.data.push(item);
   }
 
   /** キューから要素を取得する
@@ -193,6 +220,7 @@ class Queue {
    */
   dequeue() {
     // TODO:
+  return this.data.shift();
   }
 
   /** キューの要素を参照する
@@ -201,6 +229,7 @@ class Queue {
    */
   peek() {
     // TODO:
+    return this.data[0];
   }
 }
 

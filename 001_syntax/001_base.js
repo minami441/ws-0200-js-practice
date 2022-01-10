@@ -3,6 +3,7 @@
  *
  */
 function helloWorld() {
+ console.log('Hello World');
 }
 
 /**
@@ -10,6 +11,8 @@ function helloWorld() {
  *
  */
 function displayConst() {
+  const str ="hoge";
+  console.log(str);
 }
 
 /**
@@ -17,6 +20,8 @@ function displayConst() {
  *
  */
 function displayLet() {
+  let str="hoge";
+  console.log(str)
 }
 
 /**
@@ -24,6 +29,7 @@ function displayLet() {
  *
  */
 function displayArgument(arg) {
+  console.log(arg);
 }
 
 /**
@@ -31,6 +37,8 @@ function displayArgument(arg) {
  *
  */
 function sumTwoArgs(a, b) {
+  sum=a+b;
+  return sum;
 }
 
 /**
@@ -38,6 +46,8 @@ function sumTwoArgs(a, b) {
  *
  */
 function subtractTwoArgs(a, b) {
+  diff=a-b;
+  return diff;
 }
 
 /**
@@ -45,6 +55,10 @@ function subtractTwoArgs(a, b) {
  *
  */
 function quotientTwoArgs(a, b) {
+  if(a ==0 || b==0){
+    return null;
+  }
+  return Math.floor(a/b);
 }
 
 /**
@@ -52,6 +66,7 @@ function quotientTwoArgs(a, b) {
  *
  */
 function productTwoArgs(a, b) {
+  return a*b;
 }
 
 /**
@@ -59,13 +74,20 @@ function productTwoArgs(a, b) {
  *
  */
 function remainderTwoArgs(a) {
+  return a % 2;
 }
+
 
 /**
  *  1.10 渡された引数が2の倍数であることを確認するメソッドを実装してください
  *
  */
 function isEven(a) {
+  if(a%2==0){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 /**
@@ -73,6 +95,7 @@ function isEven(a) {
  *
  */
 function concatString(a, b) {
+  return a+b;
 }
 
 module.exports = {

@@ -10,6 +10,23 @@
  *
  */
 function rotate(str, num) {
+  var tmp=str.split('')
+  
+  var arrayempty = []
+
+tmp.forEach((value, index, array) => {
+
+var key=index+num
+
+if(num<0){
+  if(key<0){key=key+tmp.length}
+}else{
+  if(tmp.length-1<key){key=key-tmp.length}
+}
+
+arrayempty[key]=value
+});
+  return arrayempty.join('')
 }
 
 /**
@@ -24,6 +41,15 @@ function rotate(str, num) {
  *
  */
 function removeVowels(str) {
+  tmp=str.split('')
+  newarr=[]
+  tmp.forEach((value, index, array) => {
+    const result = value.match(/[aiueo]/);
+    if(!result){
+      newarr.push(value)
+    }
+  });
+  return newarr.join('')
 }
 
 /**
@@ -38,6 +64,14 @@ function removeVowels(str) {
  *
  */
 function countStr(s1, s2) {
+let count = 0;
+let idx = 0;
+idx = s1.indexOf(s2);
+
+while(idx != -1){
+　count++; idx = s1.indexOf(s2, idx + 1);
+}
+return count
 }
 
 /**
@@ -53,6 +87,12 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
+  var rev=str.split('').reverse().join('')
+  if(rev==str){
+    return true
+  }else{
+    return false
+  }
 }
 
 /**
@@ -70,6 +110,14 @@ function isPalindrome(str) {
  *
  */
 function isPrime(num) {
+      if(num==1)return false
+      if(num==2 || num==3){
+        return true
+      }else if(num%2!=0 && num%3!=0){
+        return true
+      }else{
+      return false
+      }
 }
 
 /**
@@ -88,6 +136,14 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
+  var count=0
+  for(let i=0; i<array.length;i++){
+    if(!(array[i]==4 || array[i-1]==4)){
+      count=count+array[i]
+     }
+  }
+
+  return count
 }
 
 module.exports = {

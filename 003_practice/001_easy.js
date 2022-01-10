@@ -12,6 +12,13 @@
  */
 
 function length(str) {
+  var tmp=[];
+  tmp=str.split('');
+  var ct=0;
+  tmp.forEach(function( value ) {
+    ct=ct+1;
+});
+return ct;
 }
 
 /**
@@ -26,6 +33,14 @@ function length(str) {
  *
  */
 function reverse(str) {
+  var tmp=[];
+  var rev;
+
+    for(let i=str.length; 0<=i; i--){
+      tmp.push(str[i]);
+    }
+    rev=tmp.join("");
+return rev;
 }
 
 /**
@@ -41,6 +56,7 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
+    return str.indexOf(char);
 }
 
 /**
@@ -56,6 +72,7 @@ function findIndex(str, char) {
  */
 
 function split(a, b) {
+    return a.split(b);
 }
 
 /**
@@ -71,6 +88,11 @@ function split(a, b) {
  */
 
 function sum(array) {
+  var ct=0;
+  for(let i=0; i<array.length; i++){
+    ct=ct+array[i];
+  }
+  return ct;
 }
 
 /**
@@ -88,6 +110,16 @@ function sum(array) {
  */
 
 function average(array) {
+  var ct=0;
+  for(let i=0; i<array.length; i++){
+    ct=ct+array[i];
+  }
+  if(ct==0){
+    return 0;
+  }
+  else{
+    return Math.trunc(ct/array.length);
+  }
 }
 
 /**
@@ -103,6 +135,7 @@ function average(array) {
  */
 
 function concat(a, b) {
+    return a.concat(b)
 }
 
 /**
@@ -118,6 +151,7 @@ function concat(a, b) {
  */
 
 function size(array) {
+    return array.length;
 }
 
 /**
@@ -134,6 +168,9 @@ function size(array) {
  */
 
 function minMax(array) {
+
+ console.log(`max: ${Math.max(...array)}, min: ${Math.min(...array)}`)
+  
 }
 
 /**
@@ -148,6 +185,11 @@ function minMax(array) {
  */
 
 function seq(num) {
+  tmp=[]
+  for(let i=0;i<num;i++){
+    tmp.push(i)
+  }
+  return tmp;
 }
 
 /**
@@ -163,6 +205,12 @@ function seq(num) {
  */
 
 function omitSeq(num) {
+        tmp=[]
+        for(let i=0;i<num;i){
+          tmp.push(++i)
+          i++
+        }
+       return tmp;
 }
 
 /**
@@ -178,6 +226,7 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
+  return array.filter(arr => arr<=num)
 }
 
 
@@ -206,6 +255,21 @@ function filter(array, num) {
  */
 
 function fizzBuzz () {
+  for(let i=1;i<100;i++){
+
+    if(i%3==0 && i%5==0){
+      console.log(`${i} FizzBuzz`)
+    }
+    else if(i%3==0){
+      console.log(`${i} Fizz`)
+    }
+    else if(i%5==0){
+      console.log(`${i} Buzz`)
+    }else{
+      console.log(i)
+    }
+
+  }
 }
 
 module.exports = {
