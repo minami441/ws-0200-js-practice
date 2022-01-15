@@ -11,6 +11,8 @@
  */
 
 function sumSequence (n, sum = 0) {
+  if(n==0)return 0
+  return n+sumSequence(n-1)
 }
 
 /**
@@ -24,6 +26,17 @@ function sumSequence (n, sum = 0) {
  */
 
 function fibonacci (num, index = 0, array = []) {
+  if(num==index){
+    return array
+  }
+  
+  if(index<2){
+    array.push(1)
+  }else{
+    array.push(array[index-2]+array[index-1])
+  }
+
+  return fibonacci(num,index+1,array)
 }
 
 
@@ -80,6 +93,20 @@ function fibonacci (num, index = 0, array = []) {
  */
 
 function fileSize (node, sum = 0) {
+  if(node['type']=='folder'){
+    node['children'].forEach((value, index, array) => {
+        if(value['type']=='folder'){
+            sum=sum+fileSize(value)
+        }
+        if(value['type']=='file'){
+            sum=sum+value['size']
+        }
+    });
+  }else if(node['type']=='file'){
+      sum=sum+node['size']
+  }
+return sum
+
 }
 
 
