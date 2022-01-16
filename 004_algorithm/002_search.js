@@ -12,6 +12,14 @@
  */
 
 function linearSearch (array, target) {
+  var ret=-1
+
+  array.forEach((value, index, array) => {
+    if(value==target){
+      ret=index
+    }
+  });
+  return ret
 }
 
 /**
@@ -25,6 +33,27 @@ function linearSearch (array, target) {
  */
 
 function binarySearch (array, target) {
+  var mid=Math.round(array.length/2)
+  var high=array.length
+  var low=1
+  var ans=-1
+  
+  while(1){
+  if(high==low)break
+      if(target==array[mid-1]){
+          ans=mid-1
+          break;
+      }
+      else if(array[mid-1]<target){
+          low=mid
+          mid=Math.round((low+high)/2)
+      }
+      else if(target<array[mid-1]){
+          high=mid
+          mid=Math.round((low+high)/2)
+      }
+  }
+  return ans
 }
 
 module.exports = {
