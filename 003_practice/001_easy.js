@@ -226,7 +226,9 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
-  return array.filter(arr => arr<=num)
+  
+var rt=array.filter(arr => arr<=num)
+  return rt
 }
 
 

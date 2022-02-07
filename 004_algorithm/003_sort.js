@@ -67,6 +67,7 @@ function mergeSort (arr) {
   var right=arr.slice(num)
   
   arr=merge(left,right)
+  
     return arr
 
 }
@@ -104,7 +105,41 @@ return arr
  */
 
 function quickSort (a, start = 0, end = (a.length -1)) {
-  return a
+
+  if(a.length<=1)return a
+  if((end-start)<=0)return
+
+var pivot=a[Math.floor((start+end)/2)]
+var tmp=a[end]
+a[end]=a[Math.floor((start+end)/2)]
+a[Math.floor((start+end)/2)]=tmp
+
+var i=start
+var j=start
+
+while(j<end){
+    
+   if(a[j]<pivot){
+        var tmp2=a[i]
+        a[i]=a[j]
+        a[j]=tmp2
+        i=i+1
+    }
+        j=j+1
+
+}
+   var tmp3=a[i]
+    a[i]=a[end]
+    a[end]=tmp3  
+
+  quickSort(a,start,i)
+  quickSort(a,i+1,end)
+   
+
+
+
+
+return a
 };
 
 module.exports = {

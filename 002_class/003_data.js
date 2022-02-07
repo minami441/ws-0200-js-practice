@@ -57,6 +57,11 @@ class List {
    */
   remove(targetIndex) {
     // TODO:途中
+
+    var rt=this.data[targetIndex]
+    this.data.splice(targetIndex,1)
+    return rt
+   
   }
 
   /** リストの 末尾の要素を取得する
@@ -127,8 +132,7 @@ class List {
    * @return {Number[]}
    */
   filter(target) {
-    // TODO:
-
+    return this.data
   }
 }
 
