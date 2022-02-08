@@ -168,9 +168,9 @@ function size(array) {
  */
 
 function minMax(array) {
-
- console.log(`max: ${Math.max(...array)}, min: ${Math.min(...array)}`)
-  
+if(array.length!=0){
+  console.log(`max: ${Math.max(...array)}, min: ${Math.min(...array)}`)
+  }
 }
 
 /**

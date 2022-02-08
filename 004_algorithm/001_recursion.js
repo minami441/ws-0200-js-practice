@@ -12,7 +12,7 @@
 
 function sumSequence (n, sum = 0) {
   if(n==0)return 0
-  return n+sumSequence(n-1)
+    return n + sumSequence(n-1)
 }
 
 /**

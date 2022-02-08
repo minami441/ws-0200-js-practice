@@ -132,7 +132,17 @@ class List {
    * @return {Number[]}
    */
   filter(target) {
-    return this.data
+    
+
+    var num=this.data.length
+    var arr = new Array()
+    for( let i = 0 ; i < num ; i ++ ){
+      if(this.data[i]!=target){
+        arr.push(this.data[i])
+      }
+    }
+    let list=new List(arr)
+    return list
   }
 }
 
